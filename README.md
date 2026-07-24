@@ -53,6 +53,19 @@ Start the API:
 uvicorn app.main:app --reload
 ```
 
+Train the recommendation model once before starting the API. This may take a
+few minutes and writes a local, ignored model artifact; the API only loads this
+artifact for every later session and request.
+
+```bash
+cd ..
+backend/myenv/bin/python recomendation-engine/train_model.py
+cd backend
+uvicorn app.main:app --reload
+```
+
+To use a model stored elsewhere, set `RECOMMENDER_MODEL_PATH` to its absolute path.
+
 The backend runs at `http://localhost:8000`. Visit `http://localhost:8000/docs` for the interactive API documentation.
 
 ### Frontend
