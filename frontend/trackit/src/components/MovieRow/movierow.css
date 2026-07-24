@@ -1,0 +1,64 @@
+/* ==========================================================================
+   MovieRow.css
+   A titled row of cards that scrolls horizontally, Netflix-style.
+   ========================================================================== */
+
+.movie-row {
+  margin: 0 0 32px;
+  padding-left: 24px;
+}
+
+.movie-row__title {
+  color: #F8FAFC;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+/* Horizontal scroll track holding all the cards */
+.movie-row__track {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 8px 24px 16px 0; /* extra top/bottom padding so hover-scaled cards aren't clipped */
+  scroll-behavior: smooth;
+
+  /* Hide scrollbar (Firefox) while keeping scroll functionality */
+  scrollbar-width: none;
+  /* Hide scrollbar (older IE/Edge) */
+  -ms-overflow-style: none;
+}
+
+/* Hide scrollbar (Chrome, Safari, Opera) */
+.movie-row__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==========================================================================
+   Responsive spacing
+   ========================================================================== */
+@media (max-width: 768px) {
+  .movie-row {
+    padding-left: 16px;
+  }
+
+  .movie-row__title {
+    font-size: 1.05rem;
+  }
+
+  .movie-row__track {
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-row {
+    padding-left: 12px;
+    margin-bottom: 24px;
+  }
+
+  .movie-row__track {
+    padding-right: 12px;
+  }
+}

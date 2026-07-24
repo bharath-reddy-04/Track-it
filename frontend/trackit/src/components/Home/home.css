@@ -1,0 +1,24 @@
+/* ==========================================================================
+   Home.css
+   Dark, full-page background for the movie browsing experience.
+   ========================================================================== */
+
+.home {
+  min-height: 100vh;
+  background-color: #101010;
+}
+
+/* Vertical space between the fixed Navbar and the first row's content.
+   ".page-content" (defined in Navbar.css) already adds padding-top equal
+   to the navbar height; this adds a little extra breathing room below it. */
+.home__content {
+  padding-top: calc(var(--navbar-height, 64px) + 24px);
+  padding-bottom: 48px;
+}
+
+.home__status {
+  color: #F8FAFC;
+  text-align: center;
+  padding: 48px 0;
+  font-size: 1.1rem;
+}

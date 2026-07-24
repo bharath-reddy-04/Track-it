@@ -1,0 +1,9 @@
+.recommended-page { min-height: 100vh; background: #101010; color: #F8FAFC; }
+.recommended-page__content { padding-top: calc(var(--navbar-height) + 32px); padding-bottom: 48px; }
+.recommended-page__content > h1, .recommended-page__content > p { margin-left: 24px; margin-right: 24px; }
+.recommended-page__content > h1 { font-size: 1.8rem; margin-bottom: 24px; }
+.recommended-page__content > p { color: #F8FAFC; }
+.recommended-page__content a { color: #14B8A6; }
+.recommended-page__error { color: #2DD4BF; }
+.recommendation-skeleton { flex: 0 0 auto; width: 180px; height: 270px; margin-right: 12px; border-radius: 8px; background: linear-gradient(100deg, #1C1C1C 20%, #14B8A6 40%, #1C1C1C 60%); background-size: 200% 100%; animation: recommendation-shimmer 1.2s infinite; }
+@keyframes recommendation-shimmer { to { background-position: -200% 0; } }

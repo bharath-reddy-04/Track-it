@@ -1,0 +1,127 @@
+/* ==========================================================================
+   OTT.css
+   Dark, Netflix-style layout for the OTT platform selection + movie rows page.
+   Mirrors Language.css exactly (same spacing, colors, and component sizing)
+   so the OTT and Language pages look and behave identically.
+   ========================================================================== */
+
+.ott-page {
+  min-height: 100vh;
+  background-color: #101010;
+}
+
+/* Space below the fixed Navbar, matching the pattern used on Home/Language */
+.ott-page__content {
+  padding-top: calc(var(--navbar-height, 64px) + 24px);
+  padding-bottom: 48px;
+}
+
+.ott-page__heading {
+  color: #F8FAFC;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 32px;
+  letter-spacing: 0.5px;
+}
+
+.ott-page__status {
+  color: #F8FAFC;
+  text-align: center;
+  padding: 32px 0;
+  font-size: 1.05rem;
+}
+
+.ott-page__status--error {
+  color: #2DD4BF;
+}
+
+/* ==========================================================================
+   Section 2: OTT platform selection area
+   ========================================================================== */
+
+.ott-select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 360px;
+  margin: 0 auto 48px;
+  padding: 0 16px;
+}
+
+.ott-select__label {
+  color: #F8FAFC;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.ott-select__dropdown {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 1rem;
+  color: #F8FAFC;
+  background-color: #1C1C1C;
+  border: 1px solid #14B8A6;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  /* Remove native browser styling so the dark theme applies consistently */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8'%3E%3Cpath fill='%23F8FAFC' d='M7 8 0 0h14z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+.ott-select__dropdown:hover,
+.ott-select__dropdown:focus {
+  border-color: #2DD4BF;
+  background-color: #1C1C1C;
+  outline: none;
+}
+
+.ott-select__dropdown option {
+  background-color: #1C1C1C;
+  color: #F8FAFC;
+}
+
+.ott-select__submit {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #F8FAFC;
+  background-color: #0D9488;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.ott-select__submit:hover:not(:disabled) {
+  background-color: #2DD4BF;
+  transform: translateY(-1px);
+}
+
+.ott-select__submit:disabled {
+  background-color: #1C1C1C;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Responsive adjustments
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .ott-page__heading {
+    font-size: 1.5rem;
+  }
+
+  .ott-select {
+    max-width: 100%;
+  }
+}

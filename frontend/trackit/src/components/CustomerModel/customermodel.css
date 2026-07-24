@@ -1,0 +1,78 @@
+.customer-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.customer-modal {
+  background: #1C1C1C;
+  color: #F8FAFC;
+  border-radius: 8px;
+  padding: 24px 28px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.customer-modal h2 {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+}
+
+.customer-modal p {
+  margin: 0 0 20px;
+  color: #F8FAFC;
+  font-size: 0.9rem;
+}
+
+.customer-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.customer-modal label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.customer-modal input {
+  padding: 10px 12px;
+  border: 1px solid #14B8A6;
+  background: #101010;
+  color: #F8FAFC;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.customer-modal input:focus {
+  outline: none;
+  border-color: #2DD4BF;
+}
+
+.customer-modal-error {
+  color: #2DD4BF;
+  font-size: 0.85rem;
+  margin: 4px 0 0;
+}
+
+.customer-modal button {
+  margin-top: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #0D9488;
+  color: #F8FAFC;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.customer-modal button:disabled {
+  background: #1C1C1C;
+  cursor: not-allowed;
+}

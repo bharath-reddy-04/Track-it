@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Card.css
+   Styling for a single movie card (poster + optional title).
+   ========================================================================== */
+
+.card {
+  /* Fixed width so cards line up neatly inside a horizontally
+     scrolling row. Adjusts down on smaller screens (see media queries). */
+  flex: 0 0 auto;
+  width: 180px;
+  margin-right: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Zoom the whole card slightly on hover for a "focus" effect */
+.card:hover {
+  transform: scale(1.08);
+  z-index: 2;
+}
+
+.card__poster {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover .card__poster {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.card__title {
+  margin: 8px 0 0;
+  color: #F8FAFC;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==========================================================================
+   Responsive sizing
+   ========================================================================== */
+@media (max-width: 768px) {
+  .card {
+    width: 140px;
+  }
+
+  .card__poster {
+    height: 210px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 110px;
+    margin-right: 8px;
+  }
+
+  .card__poster {
+    height: 165px;
+  }
+
+  .card__title {
+    font-size: 0.75rem;
+  }
+}
