@@ -6,7 +6,7 @@ routers means the response "shape" is documented in one place and reused
 by FastAPI's response_model validation + auto-generated OpenAPI docs.
 """
 
-from typing import List, Optional
+from typing import List, Literal, Optional, Union
 from pydantic import BaseModel
 
 
@@ -83,3 +83,26 @@ class ErrorResponse(BaseModel):
     """Standard error body returned for 4xx/5xx responses."""
 
     detail: str
+
+
+class WatchProvider(BaseModel):
+    provider_id: int
+    provider_name: str
+    logo_path: Optional[str] = None
+
+
+class WatchProvidersAvailableResponse(BaseModel):
+    available: Literal[True]
+    providers: List[WatchProvider]
+    link: str
+
+
+class WatchProvidersUnavailableResponse(BaseModel):
+    available: Literal[False]
+    message: str
+
+
+WatchProvidersResponse = Union[
+    WatchProvidersAvailableResponse,
+    WatchProvidersUnavailableResponse,
+]

@@ -184,3 +184,8 @@ async def get_movie_details(movie_id: int) -> dict:
         "vote_average": data.get("vote_average"),
         "genre_ids": [genre["id"] for genre in data.get("genres", [])],
     }
+
+
+async def get_movie_watch_provider_data(movie_id: int) -> dict:
+    """Fetch TMDB's region-specific watch-provider data for one movie."""
+    return await _get(f"/movie/{movie_id}/watch/providers")

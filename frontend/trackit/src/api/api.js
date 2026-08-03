@@ -55,4 +55,13 @@ export async function getOTTMovies(provider) {
   return data;
 }
 
+/**
+ * GET /api/movie/{movieId}/watch-providers
+ * @returns {Promise<Object>} India's subscription providers and TMDB watch link.
+ */
+export async function getWatchProviders(movieId) {
+  const { data } = await api.get(`/movie/${movieId}/watch-providers`);
+  return data;
+}
+
 export default api;

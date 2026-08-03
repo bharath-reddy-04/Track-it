@@ -12,7 +12,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
-from app.routers import customer, genre, home, language, ott, recommendation
+from app.routers import customer, genre, home, language, movie, ott, recommendation
 from app.services import tmdb_service
 
 app = FastAPI(
@@ -37,6 +37,7 @@ app.include_router(genre.router)
 app.include_router(ott.router)
 app.include_router(customer.router)
 app.include_router(recommendation.router)
+app.include_router(movie.router)
 
 
 @app.on_event("shutdown")
